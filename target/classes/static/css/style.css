@@ -1,0 +1,8 @@
+#spinner{
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  width:20%;
+}
+
