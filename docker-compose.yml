@@ -1,0 +1,25 @@
+#version: "3"
+#services:
+#  server:
+#    image: thymleafdemo
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      - spring.datasource.url=jdbc:mysql://mysqldb:3306/employee_directory?useSSL=false
+#    networks:
+#      - springboot-mysql-net
+#    depends_on:
+#      - mysqldb
+#
+#  mysqldb:
+#    image: mysql
+#    networks:
+#      - springboot-mysql-net
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=springstudent
+#      - MYSQL_DATABASE=employee_directory
+#      - MYSQL_USER=springstudent
+#      - MYSQL_PASSWORD=springstudent
+#
+#networks:
+#  springboot-mysql-net:
