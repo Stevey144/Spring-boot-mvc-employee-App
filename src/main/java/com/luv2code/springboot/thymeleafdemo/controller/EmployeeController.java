@@ -27,7 +27,6 @@ public class EmployeeController {
 	public String listEmployees(Model theModel) {
         //get the employees from database
 	  List<Employee> theEmployees = employeeService.findAll();
-
 		// add to the spring model
 		// our thymeleaf template uses this data
 		theModel.addAttribute("employees", theEmployees);
@@ -67,10 +66,6 @@ public class EmployeeController {
 		return "redirect:/employees/list";
 
 	}
-
-
-
-
 }
 
 
