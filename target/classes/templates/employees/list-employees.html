@@ -51,7 +51,7 @@
 
 				<td><a th:href="@{/employees/deleteEmployee(employeeId=${tempEmployee.id})}"
 					   class="btn btn-danger btn-sm"
-				        onclick="if(!(confirm('Are you Sure you want to delete this record?'))) return false">
+				        onclick="if(!(confirm('Are you sure you want to delete this record? you cannot undo this!!'))) return false">
 					 Delete
 				</a></td>
 
