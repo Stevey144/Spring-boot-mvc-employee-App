@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.luv2code.springboot.thymeleafdemo.dao.EmployeeRepository;
 import com.luv2code.springboot.thymeleafdemo.entity.Employee;
 
+@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
