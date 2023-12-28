@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+	<link th:href="@{/css/style.css}" rel="stylesheet" >
+	<link th:href="@{/css/bootstrap.css}" rel="stylesheet" >
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" >
+	<script th:src="@{/js/bootstrap.js}"></script>
+
+	<title>Employee Directory</title>
+</head>
+
+<body>
+
+<div class="container">
+
+	<h3>Employee Directory</h3>
+	<hr>
+	<img th:src="@{/image/Spinner-5.gif}" id="spinner" />
+	<!--Add an employee-->
+	<a th:href="@{/employees/showFormForAdd}" class="btn btn-primary btn-sm mb-3 addEmployee"> Add Employee</a>
+
+	<table class="table table-bordered table-striped table-hover employeeList">
+		<thead class="table-dark">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Designation</th>
+				<th>Action</th>
+				<th></th>
+
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempEmployee : ${employees}">
+			
+				<td th:text="${tempEmployee.firstName}" />	
+				<td th:text="${tempEmployee.lastName}" />	
+				<td th:text="${tempEmployee.email}" />
+				<td th:text="${tempEmployee.designation}" />
+                <td><a th:href="@{/employees/showFormForUpdate(employeeId=${tempEmployee.id})}"
+				     class="btn btn-info btn-sm">
+					Update
+				</a></td>
+
+				<td><a th:href="@{/employees/deleteEmployee(employeeId=${tempEmployee.id})}"
+					   class="btn btn-danger btn-sm"
+				        onclick="if(!(confirm('Are you sure you want to delete this record? you cannot undo this!!'))) return false">
+					 Delete
+				</a></td>
+
+			</tr>
+		</tbody>		
+	</table>
+	
+</div>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery.js}"></script>
+</body>
+</html>
+
+
+
